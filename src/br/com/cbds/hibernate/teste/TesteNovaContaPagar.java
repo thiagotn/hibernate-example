@@ -1,5 +1,7 @@
 package br.com.cbds.hibernate.teste;
 
+import java.util.GregorianCalendar;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -22,7 +24,9 @@ public class TesteNovaContaPagar {
 		
 		ContaPagar cp = new ContaPagar();
 		cp.setFornecedor(fornecedor);
-		cp.setValor(200.0);
+		cp.setDescricao("Canetas Bic");
+		cp.setData(new GregorianCalendar());
+		cp.setValor(150.0);
 		cp.setPago(true);
 		
 		Transaction t = s.beginTransaction();

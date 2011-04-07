@@ -6,9 +6,11 @@ import org.hibernate.Session;
 public class Dao<T> {
 
 	private static Logger logger = Logger.getLogger(Dao.class);
+	@SuppressWarnings("unchecked")
 	private Class persistentClass;
 	private Session session;
 	
+	@SuppressWarnings("unchecked")
 	public Dao(Session session, Class persistentClass){
 		this.session = session;
 		this.persistentClass = persistentClass;

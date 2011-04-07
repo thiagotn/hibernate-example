@@ -6,8 +6,7 @@ import br.com.cbds.hibernate.modelo.Fornecedor;
 
 public class FornecedorDao extends Dao<Fornecedor> {
 
-	public FornecedorDao(Session session, Class persistentClass) {
-		super(session, persistentClass);
+	public FornecedorDao(Session session) {
+		super(session, Fornecedor.class);
 	}
-
 }

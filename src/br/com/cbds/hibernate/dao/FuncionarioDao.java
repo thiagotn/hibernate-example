@@ -13,14 +13,14 @@ import br.com.cbds.hibernate.modelo.Funcionario;
 
 public class FuncionarioDao extends Dao<Funcionario> {
 
-	public FuncionarioDao(Session session, Class persistentClass) {
-		super(session, persistentClass);
+	public FuncionarioDao(Session session) {
+		super(session, Funcionario.class);
 	}
 
 	@SuppressWarnings("unchecked")
 	public List<Funcionario> buscaFuncionario(String nome) {
 		Criteria c = getSession().createCriteria(Funcionario.class);
-		c.add(Restrictions.ilike("nome", nome));
+		c.add(Restrictions.like("nome", nome));
 		c.addOrder(Order.asc("email"));
 		return c.list();
 	}
@@ -43,9 +43,9 @@ public class FuncionarioDao extends Dao<Funcionario> {
 		return c.list();
 	}
 	
-	public int countTotalFuncionarios() {
+	public long countTotalFuncionarios() {
 		Criteria c = getSession().createCriteria(Funcionario.class);
 		c.setProjection(Projections.rowCount());
-		return (Integer) (c.uniqueResult());
+		return (Long) (c.uniqueResult());
 	}
 }

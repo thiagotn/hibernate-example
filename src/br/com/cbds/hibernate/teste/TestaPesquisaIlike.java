@@ -12,8 +12,8 @@ public class TestaPesquisaIlike {
 
 	public static void main(String[] args) {
 		Session session = HibernateUtil.openSession();
-		FuncionarioDao funcionarioDao = new FuncionarioDao(session, Funcionario.class);
-		List<Funcionario> lista = funcionarioDao.buscaFuncionario("%au%");
+		FuncionarioDao funcionarioDao = new FuncionarioDao(session);
+		List<Funcionario> lista = funcionarioDao.buscaFuncionario("%ia%");
 		for (Funcionario f : lista) {
 			System.out.println(f.getNome());
 		}

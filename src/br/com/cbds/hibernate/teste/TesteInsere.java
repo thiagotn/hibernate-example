@@ -18,9 +18,9 @@ public class TesteInsere {
 		Session s = sf.openSession();
 		
 		Funcionario funcionario = new Funcionario();
-		funcionario.setNome("Thiago Nogueira");
-		funcionario.setEmail("thiago.nogueira@cbds.inf.br");
-		funcionario.setUsuario("thiago.nogueira");
+		funcionario.setNome("Antonio Jose");
+		funcionario.setEmail("antonio.jose@cbds.inf.br");
+		funcionario.setUsuario("antonio.jose");
 		funcionario.setSenha("123456");
 		
 		Transaction t = s.beginTransaction();
